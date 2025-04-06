@@ -6,6 +6,38 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+  <header>
+    <h1>Lägg till kurs</h1>
+    <nav>
+      <a href="/">Start</a>
+      <a href="/add">Lägg till kurs</a>
+      <a href="/about">Om sidan</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Lägg till kurser</h1>
+    <form method ="post">
+      <% if(error != "") { %>
+        <p class="error"><%= error %> </p>
+      <% } %>
+      <label for="coursecode">Kurskod:</label>
+      <br>
+      <input type="text" id="coursecode" name="coursecode">
+      <br>
+      <label for="coursename">Kursnamn:</label>
+      <br>
+      <input type="text" id="coursename" name="coursename">
+      <br>
+      <label for="syllabus">Kursplan:</label>
+      <br>
+      <input type="text" id="syllabus" name="syllabus">
+      <br>
+      <label for="progression">Kursprogression:</label>
+      <br>
+      <input type="text" id="progression" name="progression">
+      <br>
+      <input type="submit" value="Lägg till kurs">
+    </form>
 
 </body>
 </html>
