@@ -38,6 +38,9 @@ app.post("/add", (req, res) => {
         error = "Du måste fylla i alla fält!";
         res.render("add", { error: error }); // Rendera om "add" sidan och skicka med felet
     } else {
+        const stmt = db.prepare("INSERT INTO courses(coursecode, coursename, syllabus, progression)VALUES(?,?,?,?);");
+        stmt.run(coursename, coursecode, syllabus, progression);
+        stmt.finalize();
     }
         res.render("add", {
             error: error
@@ -46,4 +49,4 @@ app.post("/add", (req, res) => {
 
 app.listen(port, () => {
     console.log("Application started on port: " + port);
-})
+});
