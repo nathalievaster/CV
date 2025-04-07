@@ -17,7 +17,20 @@
 
   <div class="container">
     <h1>Alla kurser</h1>
-    <ul class="course-list"></ul>
+    <ul class="course-list">
+      <% if (rows.length > 0) { %>
+        <% rows.forEach((row) => { %>
+          <li>
+            <strong><%= row.coursecode %></strong>: 
+            <%= row.coursename %> — 
+            <a href="<%= row.syllabus %>" target="_blank">Kursplan</a>, 
+            Progression: <%= row.progression %>
+          </li>
+        <% }); %>
+      <% } else { %>
+        <p>Inga kurser har lagts till än.</p>
+      <% } %>
+  </ul>
 
 </body>
 </html>

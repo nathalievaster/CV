@@ -12,7 +12,15 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 // Visa alla kurser (Startsida)
 app.get("/", (req, res) => {
-    res.render("index"); // Renderar index.ejs
+    db.all("SELECT * FROM courses;", (err, rows) => {
+        if (err) {
+            console.error(err.message);
+        }
+        res.render("index", {
+            error: "",
+            rows: rows
+        });
+    });
 });
 
 // Lägg till en ny kurs
@@ -32,19 +40,22 @@ app.post("/add", (req, res) => {
     let coursename = req.body.coursename;
     let syllabus = req.body.syllabus;
     let progression = req.body.progression;
-    let error = "";
 
     if (!coursecode || !coursename || !syllabus || !progression) {
-        error = "Du måste fylla i alla fält!";
-        res.render("add", { error: error }); // Rendera om "add" sidan och skicka med felet
+        const error = "Du måste fylla i alla fält!";
+        res.render("add", { error: error }); 
     } else {
-        const stmt = db.prepare("INSERT INTO courses(coursecode, coursename, syllabus, progression)VALUES(?,?,?,?);");
-        stmt.run(coursename, coursecode, syllabus, progression);
+        const stmt = db.prepare("INSERT INTO courses(coursecode, coursename, syllabus, progression) VALUES (?, ?, ?, ?);");
+        stmt.run(coursecode, coursename, syllabus, progression, function(err) {
+            if (err) {
+                console.error(err.message);
+                res.render("add", { error: "Fel vid lagring av kurs!" });
+            } else {
+                res.redirect("/"); // Redirect till startsidan när kursen lagts till
+            }
+        });
         stmt.finalize();
     }
-        res.render("add", {
-            error: error
-        });
 });
 
 app.listen(port, () => {
