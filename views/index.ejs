@@ -21,10 +21,11 @@
       <% if (rows.length > 0) { %>
         <% rows.forEach((row) => { %>
           <li>
-            <strong><%= row.coursecode %></strong>: 
-            <%= row.coursename %> — 
-            <a href="<%= row.syllabus %>" target="_blank">Kursplan</a>, 
-            Progression: <%= row.progression %>
+            <strong><%= row.coursecode %></strong> 
+            <%= row.coursename %> 
+            <a href="<%= row.syllabus %>" class="syllabus" target="_blank">Kursplan</a> 
+            Progression: <%= row.progression %> 
+            <a href="/delete/<%= row.id %>" class="delete-btn" onclick="return confirm('Är du säker på att du vill radera denna kurs?')">Radera</a>
           </li>
         <% }); %>
       <% } else { %>

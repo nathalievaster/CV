@@ -28,3 +28,76 @@ body {
     padding: 0.5rem;
     margin-top: 0.3rem;
   }
+
+  input[type="submit"] {
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.5rem;
+    max-width: 230px;
+    background-color: #2e86de;
+    font-size: 1.1em;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #1b4f72;
+  }
+  
+  
+  .course-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+  
+  .course-list li {
+    background-color: #f7f9fb;
+    border: 1px solid #dcdcdc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .syllabus {
+    color: #4e7ae9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+  }
+  
+  .syllabus:hover {
+    text-decoration: underline;
+  }
+  
+  .error {
+    background-color: #ffdddd;
+    color: #a00;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-left: 5px solid #d00;
+    border-radius: 6px;
+  }
+
+  .delete-btn {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  

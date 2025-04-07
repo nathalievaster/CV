@@ -35,6 +35,19 @@ app.get("/about", (req, res) => {
     res.render("about"); // Renderar about.ejs (om sidan)
 });
 
+// Radera kurs
+app.get("/delete/:id", (req, res) => {
+    const id = req.params.id;
+
+    db.run("DELETE FROM courses WHERE id = ?", id, function(err) {
+        if (err) {
+            console.error(err.message);
+        }
+        res.redirect("/"); 
+    });
+});
+
+
 app.post("/add", (req, res) => {
     let coursecode = req.body.coursecode;
     let coursename = req.body.coursename;
