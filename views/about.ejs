@@ -11,11 +11,43 @@
     <header>
         <h1>Om sidan</h1>
         <nav>
-          <a href="/">Start</a>
-          <a href="/add">Lägg till kurs</a>
-          <a href="/about">Om sidan</a>
+            <a href="/">Start</a>
+            <a href="/add">Lägg till kurs</a>
+            <a href="/about">Om sidan</a>
         </nav>
-      </header>
+    </header>
+
+    <div class="container">
+        <h1>Om sidan</h1>
+
+        <p>Den här webbplatsen är skapad som en del av en laboration i kursen <strong>Backend-baserad
+                webbutveckling</strong>. Syftet med webbapplikationen är att tillåta användare att lagra och visa kurser
+            de har läst, vilket kan användas som en del i ett framtida CV eller portfolio. Målet har varit att lära mig
+            implicera användandet av databaser i webbutveckling. </p>
+
+        <h2>Tekniker och verktyg</h2>
+        <ul>
+            <li><strong>Node.js</strong> – för att skapa servermiljön</li>
+            <li><strong>Express</strong> – för att hantera routing och serverlogik</li>
+            <li><strong>sqlite3</strong> – en lättviktig relationsdatabas för att lagra kursdata</li>
+            <li><strong>EJS</strong> – som template engine för att rendera HTML med data</li>
+            <li><strong>Nodemon</strong> – för att automatiskt starta om servern vid ändringar under utveckling</li>
+            <li><strong>ER-diagram</strong> - ett enkelt diagram sattes ihop för att få överblick av tabellen</li>
+        </ul>
+
+        <h2>Databas</h2>
+        <p>Databasen som används är <strong>SQLite</strong>, en enkel relationsdatabas som lagras i en lokal fil. Den
+            innehåller en tabell vid namn <code>courses</code>, som lagrar information om kurskod, kursnamn, kursplan
+            och progression.</p>
+
+        <h2>Slutsatser</h2>
+        <p>Genom arbetet med denna laboration har jag fått öva på hur man startar igång ett arbete i Node.js med Express
+             och en databas. Tidigare arbete med databaser har bara skett i terminalen, så det var kul att få se en mer
+             "konkret" användning av det. Ju längre in i utbildningen jag kommer, desto mer inser jag att det är mer åt 
+             backend-hållet jag vill jobba inom. Desto mer problemlösning och mindre estet, ju roligare blir det!
+        </p>
+    </div>
+
 
 </body>
 
